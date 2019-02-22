@@ -1,0 +1,105 @@
+BASH SHELL SCRIPTING
+Shell types you OS support
+•	cat /etc/shell
+•	sh: stands for born shell with unix
+•	bash: stands for born again shell/standard shell 
+Where bash is located
+•	which bash
+Creating the new file
+•	touch filename.sh (used to create the file) It only allow to read and write the file but not to execute the file. So we use chmod +x filename,sh
+•	mkdir (used t create the folder)
+•	ls -al see the rights (read and write the file)
+Standard practice for the bash scripting
+•	#! bin/bash
+Printing commands
+•	echo""
+Run the shell script
+•	./filename,sh 
+Comments
+•	#
+Variables of Two types
+•	System variable (Created by OS)-> Defined in capital letters
+•	$BASH (gives the name of the bash or a shell)
+•	$BASH_VERSION (Gives the Bash version)
+•	$HOME (Gives the home directory)
+•	$PWD (Present working direstory)
+•	User defines variables->Defines by the user
+•	variable= name (access by $name)
+•	The variable name should not start with the number 
+Read user INPUT
+•	read command
+•	for multiple inputs ->(read name1 name2 nam 3)
+FLAGS
+•	-p (allows us to input on the sam group or line)
+•	-sp (For password->doesnt show on the terminal)
+•	-a (for ARRAY)-> Extracting an array (${name[0] } , ${name[1]})
+•	If you didnt store the user in put in any variable and just write (READ) than the input will save in ($RPLY) Variable.
+•	-s if for checking whether the file is empty or not.
+•	Check whether your file has the read permission ( -r ).
+•	Check whether your file has the write permission ( -w ).
+•	Check whether your file has the execute permission ( -x ).
+•	
+Pass argument to Bash Script
+•	echo $0 $1 $2 $3 '> echo $1 $2 $3' ($0 store the name of the bash script)
+•	Passing arguments as an array ( args=("$@") )-> $@ store the argument as an array -> ACCESSing the Array( echo ${args[0]} ${args[1]}  ) ->Printing array at once ( echo $@ ) -> Print the number of arguments ( $# )
+Expressions 
+An expression can be: String comparison, Numeric comparison, File operators and Logical operators and it is represented by [expression]:
+String Comparisons:  
+---------------------------------
+•	=  compare if two strings are equal
+•	!=  compare if two strings are not equal
+•	-n  evaluate if string length is greater than zero
+•	-z  evaluate if string length is equal to zero 
+
+Examples: 
+•	[ s1 = s2 ]  (true if s1 same as s2, else false)
+•	[ s1 != s2 ]  (true if s1 not same as s2, else false)
+•	[ s1 ]   (true if s1 is not empty, else false)
+•	[ -n s1 ]   (true if s1 has a length greater then 0, else false)
+•	[ -z s2 ]   (true if s2 has a length of 0, otherwise false)
+
+Number Comparisons: 
+------------------------------------
+•	-eq compare if two numbers are equal
+•	-ge compare if one number is greater than or equal to a number
+•	-le  compare if one number is less than or equal to a number
+•	-ne  compare if two numbers are not equal
+•	-gt  compare if one number is greater than another number
+•	-lt  compare if one number is less than another number 
+
+Examples: 
+•	[ n1 -eq n2 ]  (true if n1 same as n2, else false)
+•	[ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)
+•	[ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)
+•	[ n1 -ne n2 ]  (true if n1 is not same as n2, else false)
+•	[ n1 -gt n2 ]  (true if n1 greater then n2, else false)
+•	[ n1 -lt n2 ]  (true if n1 less then n2, else false)
+File Test Operators
+Whether file Exit or not
+•	\c is used to keep the curser on the same line.
+•	FLAG -e (used to enable the interpretation of \c)
+•	echo -e "Enter nmber : \c"
+Check whether the flag exist or not
+•	we use -e ( read file_name ,if [ -e $file_name ])
+Check if its a file exist or not we use FLAG
+•	-f
+Check for the directories we use flag
+•	-d
+Two types of files
+•	character special file(Flag -c)
+•	block special file.(We use the Flag -b )
+•	checks whether the file is empty or not(Flag -s)-> We can check it by command( ls -l )
+
+Open the file in the terminal
+•	cat< filename  -> for exiting press CTRL+D 
+
+
+
+
+Append the output to the end of the text file.
+•	-w checks whether the file has write conditions or not.
+
+ 
+
+For changing permissions we use chmod +/- with w,r,x 
+•	+ is for giving the permissions and – is for removing the permissions.
